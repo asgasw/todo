@@ -1,0 +1,7 @@
+- name: install language-pack-ja
+  apt:
+    name: language-pack-ja
+    update_cache: yes
+
+- name: update locale
+  command: update-locale LANG=ja_JP.UTF-8

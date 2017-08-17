@@ -1,0 +1,23 @@
+- hosts: all
+  become: yes
+  user: vagrant
+  roles:
+    - locale
+    - geerlingguy.ruby
+    - geerlingguy.nodejs
+    - ANXS.postgresql
+    - geerlingguy.redis
+  vars:
+    # ruby
+    ruby_install_from_source: true
+    ruby_download_url: http://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.1.tar.gz
+    ruby_version: 2.4.1
+    # nodejs
+    nodejs_version: 6.x
+    nodejs_npm_global_packages: [yarn]
+    # postgresql
+    postgresql_version: 9.3
+    postgresql_encoding: UTF-8
+    postgresql_locale: ja_JP.UTF-8
+    postgresql_ctype: ja_JP.UTF-8
+    postgresql_ext_install_dev_headers: true
