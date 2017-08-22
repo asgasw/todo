@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <div>
+      <p>links</p>
+      <ul>
+        <li><%= link_to 'Project', projects_path %></li>
+        <li><%= link_to 'Todo', todos_path %></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>
