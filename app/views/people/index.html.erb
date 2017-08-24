@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>image</th>
       <th>Name</th>
       <th>Section</th>
       <th>Pc</th>
@@ -15,10 +16,11 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
+        <td><%= image_tag person.photo.image, width:50 if person.photo %></td>
         <td><%= person.name %></td>
         <td><%= person.section.name %></td>
         <td><%= person.pc.name %></td>
-        <td><%= person.home.address %></td>
+        <td><%= person.home.address if person.home %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
         <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
