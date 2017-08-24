@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :homes
+  resources :pcs
+  resources :sections
+  resources :people
   resources :todos
   resources :projects
   get 'home/index'
