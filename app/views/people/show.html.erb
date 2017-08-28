@@ -15,5 +15,10 @@
   <%= @person.pc.name %>
 </p>
 
+<p>
+  <strong>画像</strong>
+  <%= image_tag @person.photo.image, width:400 if @person.photo %>
+</p>
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

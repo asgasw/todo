@@ -15,10 +15,12 @@ class PeopleController < ApplicationController
   # GET /people/new
   def new
     @person = Person.new
+    @person.build_photo
   end
 
   # GET /people/1/edit
   def edit
+    @person.build_photo unless @person.photo
   end
 
   # POST /people
@@ -69,6 +71,8 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :section_id, :pc_id, :people_id)
+      params.require(:person).permit(:name, :section_id, :pc_id, :people_id,
+        photo_attributes: [:id, :image]
+      )
     end
 end
